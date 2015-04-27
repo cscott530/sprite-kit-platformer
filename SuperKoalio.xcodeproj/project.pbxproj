@@ -7,23 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83E15F151AEDDB4E00A6AB7B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E15F141AEDDB4E00A6AB7B /* Player.swift */; };
+		83E15F171AEDDB6900A6AB7B /* GameLevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E15F161AEDDB6900A6AB7B /* GameLevelScene.swift */; };
+		83E15F191AEDDB9200A6AB7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E15F181AEDDB9200A6AB7B /* AppDelegate.swift */; };
+		83E15F1B1AEDDBDB00A6AB7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E15F1A1AEDDBDB00A6AB7B /* ViewController.swift */; };
 		F275B671186E0B06009F6E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B670186E0B06009F6E6B /* Foundation.framework */; };
 		F275B673186E0B06009F6E6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B672186E0B06009F6E6B /* CoreGraphics.framework */; };
 		F275B675186E0B06009F6E6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B674186E0B06009F6E6B /* UIKit.framework */; };
 		F275B677186E0B06009F6E6B /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B676186E0B06009F6E6B /* SpriteKit.framework */; };
 		F275B67D186E0B06009F6E6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F275B67B186E0B06009F6E6B /* InfoPlist.strings */; };
-		F275B67F186E0B06009F6E6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F275B67E186E0B06009F6E6B /* main.m */; };
-		F275B683186E0B06009F6E6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F275B682186E0B06009F6E6B /* AppDelegate.m */; };
 		F275B686186E0B06009F6E6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F275B684186E0B06009F6E6B /* Main.storyboard */; };
-		F275B689186E0B06009F6E6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F275B688186E0B06009F6E6B /* ViewController.m */; };
-		F275B68C186E0B06009F6E6B /* GameLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F275B68B186E0B06009F6E6B /* GameLevelScene.m */; };
 		F275B690186E0B06009F6E6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F275B68F186E0B06009F6E6B /* Images.xcassets */; };
 		F275B697186E0B06009F6E6B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B696186E0B06009F6E6B /* XCTest.framework */; };
 		F275B698186E0B06009F6E6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B670186E0B06009F6E6B /* Foundation.framework */; };
 		F275B699186E0B06009F6E6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F275B674186E0B06009F6E6B /* UIKit.framework */; };
 		F275B6A1186E0B06009F6E6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F275B69F186E0B06009F6E6B /* InfoPlist.strings */; };
 		F275B6A3186E0B06009F6E6B /* SuperKoalioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F275B6A2186E0B06009F6E6B /* SuperKoalioTests.m */; };
-		F275B6AE186E0B8D009F6E6B /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F275B6AD186E0B8D009F6E6B /* Player.m */; };
 		F275B6B7186E21AB009F6E6B /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F275B6B6186E21AB009F6E6B /* sprites.atlas */; };
 		F275B6BC186E21CB009F6E6B /* hurt.wav in Resources */ = {isa = PBXBuildFile; fileRef = F275B6B8186E21CB009F6E6B /* hurt.wav */; };
 		F275B6BD186E21CB009F6E6B /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = F275B6B9186E21CB009F6E6B /* jump.wav */; };
@@ -55,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83E15F131AEDDB4100A6AB7B /* SuperKoalio-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SuperKoalio-Bridging-Header.h"; sourceTree = "<group>"; };
+		83E15F141AEDDB4E00A6AB7B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		83E15F161AEDDB6900A6AB7B /* GameLevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLevelScene.swift; sourceTree = "<group>"; };
+		83E15F181AEDDB9200A6AB7B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83E15F1A1AEDDBDB00A6AB7B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83E15F1C1AEDE11100A6AB7B /* SuperKoalio-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperKoalio-Prefix.pch"; sourceTree = "<group>"; };
 		F275B66D186E0B06009F6E6B /* SuperKoalio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperKoalio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F275B670186E0B06009F6E6B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F275B672186E0B06009F6E6B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,23 +67,13 @@
 		F275B676186E0B06009F6E6B /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		F275B67A186E0B06009F6E6B /* SuperKoalio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperKoalio-Info.plist"; sourceTree = "<group>"; };
 		F275B67C186E0B06009F6E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F275B67E186E0B06009F6E6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F275B680186E0B06009F6E6B /* SuperKoalio-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperKoalio-Prefix.pch"; sourceTree = "<group>"; };
-		F275B681186E0B06009F6E6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F275B682186E0B06009F6E6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F275B685186E0B06009F6E6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F275B687186E0B06009F6E6B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F275B688186E0B06009F6E6B /* ViewController.m */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; tabWidth = 2; };
-		F275B68A186E0B06009F6E6B /* GameLevelScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameLevelScene.h; sourceTree = "<group>"; };
-		F275B68B186E0B06009F6E6B /* GameLevelScene.m */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = GameLevelScene.m; sourceTree = "<group>"; tabWidth = 2; };
 		F275B68F186E0B06009F6E6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F275B695186E0B06009F6E6B /* SuperKoalioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperKoalioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F275B696186E0B06009F6E6B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F275B69E186E0B06009F6E6B /* SuperKoalioTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperKoalioTests-Info.plist"; sourceTree = "<group>"; };
 		F275B6A0186E0B06009F6E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F275B6A2186E0B06009F6E6B /* SuperKoalioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperKoalioTests.m; sourceTree = "<group>"; };
-		F275B6AC186E0B8D009F6E6B /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		F275B6AD186E0B8D009F6E6B /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		F275B6B6186E21AB009F6E6B /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		F275B6B8186E21CB009F6E6B /* hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hurt.wav; sourceTree = "<group>"; };
 		F275B6B9186E21CB009F6E6B /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
@@ -173,15 +168,11 @@
 			children = (
 				F275B6CC186E25C1009F6E6B /* SKTUtils */,
 				F275B6C9186E2442009F6E6B /* JSTileMap */,
-				F275B6AC186E0B8D009F6E6B /* Player.h */,
-				F275B6AD186E0B8D009F6E6B /* Player.m */,
-				F275B68A186E0B06009F6E6B /* GameLevelScene.h */,
-				F275B68B186E0B06009F6E6B /* GameLevelScene.m */,
-				F275B681186E0B06009F6E6B /* AppDelegate.h */,
-				F275B682186E0B06009F6E6B /* AppDelegate.m */,
+				83E15F161AEDDB6900A6AB7B /* GameLevelScene.swift */,
+				83E15F141AEDDB4E00A6AB7B /* Player.swift */,
+				83E15F181AEDDB9200A6AB7B /* AppDelegate.swift */,
+				83E15F1A1AEDDBDB00A6AB7B /* ViewController.swift */,
 				F275B684186E0B06009F6E6B /* Main.storyboard */,
-				F275B687186E0B06009F6E6B /* ViewController.h */,
-				F275B688186E0B06009F6E6B /* ViewController.m */,
 				F275B6C2186E21EB009F6E6B /* Resources */,
 				F275B68F186E0B06009F6E6B /* Images.xcassets */,
 				F275B679186E0B06009F6E6B /* Supporting Files */,
@@ -192,10 +183,10 @@
 		F275B679186E0B06009F6E6B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83E15F1C1AEDE11100A6AB7B /* SuperKoalio-Prefix.pch */,
+				83E15F131AEDDB4100A6AB7B /* SuperKoalio-Bridging-Header.h */,
 				F275B67A186E0B06009F6E6B /* SuperKoalio-Info.plist */,
 				F275B67B186E0B06009F6E6B /* InfoPlist.strings */,
-				F275B67E186E0B06009F6E6B /* main.m */,
-				F275B680186E0B06009F6E6B /* SuperKoalio-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -327,9 +318,12 @@
 		F275B665186E0B06009F6E6B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Razeware;
 				TargetAttributes = {
+					F275B66C186E0B06009F6E6B = {
+						DevelopmentTeam = 3FAV5M6YWF;
+					};
 					F275B694186E0B06009F6E6B = {
 						TestTargetID = F275B66C186E0B06009F6E6B;
 					};
@@ -387,21 +381,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F275B68C186E0B06009F6E6B /* GameLevelScene.m in Sources */,
 				F275B6E2186E25C1009F6E6B /* SKNode+SKTExtras.m in Sources */,
-				F275B689186E0B06009F6E6B /* ViewController.m in Sources */,
-				F275B683186E0B06009F6E6B /* AppDelegate.m in Sources */,
 				F275B6C8186E243E009F6E6B /* JSTileMap.m in Sources */,
-				F275B67F186E0B06009F6E6B /* main.m in Sources */,
 				F275B6E5186E25C1009F6E6B /* SKTTimingFunctions.m in Sources */,
 				F275B6C7186E243E009F6E6B /* LFCGzipUtility.m in Sources */,
-				F275B6AE186E0B8D009F6E6B /* Player.m in Sources */,
 				F275B6E3186E25C1009F6E6B /* SKTAudio.m in Sources */,
+				83E15F191AEDDB9200A6AB7B /* AppDelegate.swift in Sources */,
 				F275B6E4186E25C1009F6E6B /* SKTEffects.m in Sources */,
 				F275B6DE186E25C1009F6E6B /* SKAction+SKTExtras.m in Sources */,
 				F275B6E0186E25C1009F6E6B /* SKEmitterNode+SKTExtras.m in Sources */,
 				F275B6DF186E25C1009F6E6B /* SKAction+SKTSpecialEffects.m in Sources */,
+				83E15F151AEDDB4E00A6AB7B /* Player.swift in Sources */,
 				F275B6E1186E25C1009F6E6B /* SKNode+SKTDebugDraw.m in Sources */,
+				83E15F1B1AEDDBDB00A6AB7B /* ViewController.swift in Sources */,
+				83E15F171AEDDB6900A6AB7B /* GameLevelScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -484,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -494,7 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -517,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -528,12 +521,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SuperKoalio/SuperKoalio-Prefix.pch";
 				INFOPLIST_FILE = "SuperKoalio/SuperKoalio-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
-				WRAPPER_EXTENSION = app;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SuperKoalio/SuperKoalio-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -542,19 +539,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SuperKoalio/SuperKoalio-Prefix.pch";
 				INFOPLIST_FILE = "SuperKoalio/SuperKoalio-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
-				WRAPPER_EXTENSION = app;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/SuperKoalio/SuperKoalio-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		F275B6AA186E0B06009F6E6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SuperKoalio.app/SuperKoalio";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -577,7 +576,6 @@
 		F275B6AB186E0B06009F6E6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SuperKoalio.app/SuperKoalio";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
