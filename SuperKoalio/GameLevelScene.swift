@@ -11,12 +11,18 @@ import SpriteKit
 
 class GameLevelScene: SKScene {
     var map : JSTileMap?
+    var player: Player?
     override init(size: CGSize) {
         super.init(size: size)
         
         self.backgroundColor = SKColor(red: 0.4, green: 0.4, blue: 0.95, alpha: 1.0)
         self.map = JSTileMap(named: "level1.tmx")
         self.addChild(self.map!)
+        
+        self.player = Player(imageNamed: "koalio_stand")
+        self.player!.position = CGPointMake(100, 50)
+        self.player!.zPosition = 15
+        self.map!.addChild(self.player!)
     }
 
     required init?(coder aDecoder: NSCoder) {
