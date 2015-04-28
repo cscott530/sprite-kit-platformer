@@ -11,6 +11,7 @@ import SpriteKit
 
 class Player : SKSpriteNode {
     var velocity: CGPoint
+    var desiredPosition: CGPoint
     /**
     Initialize a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite. Its size is set to the SKTexture's pixel width/height)
     The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
@@ -22,6 +23,7 @@ class Player : SKSpriteNode {
         let color = UIColor.clearColor()
         let size = texture.size()
         velocity = CGPointMake(0, 0)
+        desiredPosition = CGPointMake(0, 0)
         super.init(texture: texture, color: color, size: size)
     }
 
@@ -36,10 +38,12 @@ class Player : SKSpriteNode {
         self.velocity = CGPointAdd(velocity, gStep)
         
         let vStep = CGPointMultiplyScalar(velocity, delta)
-        self.position = CGPointAdd(self.position, vStep)
+        self.desiredPosition = CGPointAdd(self.position, vStep)
     }
     
     func collisionBoundingBox() -> CGRect {
-        return CGRectInset(self.frame, 2, 0)
+        let box = CGRectInset(self.frame, 2, 0)
+        let diff = CGPointSubtract(self.desiredPosition, self.position)
+        return CGRectOffset(box, diff.x, diff.y)
     }
 }

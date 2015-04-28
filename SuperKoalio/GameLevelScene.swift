@@ -59,7 +59,7 @@ class GameLevelScene: SKScene {
         let indices = [7, 1, 3, 5, 0, 2, 6, 8]
         for index in indices {
             let playerBox = player.collisionBoundingBox()
-            let playerCoord = layer.coordForPoint(player.position)
+            let playerCoord = layer.coordForPoint(player.desiredPosition)
             
             let column = index % 3
             let row = index / 3
