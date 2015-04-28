@@ -10,20 +10,22 @@ import Foundation
 import SpriteKit
 
 class GameLevelScene: SKScene {
-    var map : JSTileMap?
-    var player: Player?
+    var map : JSTileMap
+    var player: Player
     var previousUpdateTime: NSTimeInterval = 0.0
+    var walls: TMXLayer
     override init(size: CGSize) {
+        self.map = JSTileMap(named: "level1.tmx")
+        self.player = Player(imageNamed: "koalio_stand")
+        self.walls = map.layerNamed("walls")
         super.init(size: size)
         
         self.backgroundColor = SKColor(red: 0.4, green: 0.4, blue: 0.95, alpha: 1.0)
-        self.map = JSTileMap(named: "level1.tmx")
-        self.addChild(self.map!)
+        self.addChild(self.map)
         
-        self.player = Player(imageNamed: "koalio_stand")
-        self.player!.position = CGPointMake(100, 50)
-        self.player!.zPosition = 15
-        self.map!.addChild(self.player!)
+        self.player.position = CGPointMake(100, 50)
+        self.player.zPosition = 15
+        self.map.addChild(self.player)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -37,23 +39,65 @@ class GameLevelScene: SKScene {
         }
         
         self.previousUpdateTime = currentTime
-        self.player!.update(delta)
+        self.player.update(delta)
+        
+        self.checkForAndResolveCollisionsForPlayer(player, layer: walls)
+    }
+
+    func tileRectFromTileCoords(coords: CGPoint) -> CGRect {
+        let levelHeight = self.map.frame.size.height * self.map.tileSize.height
+        let origin = CGPointMake(coords.x * self.map.tileSize.width, levelHeight - ((coords.y + 1) * (self.map.tileSize.height)))
+        return CGRectMake(origin.x, origin.y, self.map.tileSize.width, self.map.tileSize.height)
+    }
+    
+    func tileGIDAtCoordinate(coord: CGPoint, layer: TMXLayer) -> Int {
+        let info = layer.layerInfo
+        return info.tileGidAtCoord(coord)
+    }
+    
+    func checkForAndResolveCollisionsForPlayer(player: Player, layer: TMXLayer) {
+        let indices = [7, 1, 3, 5, 0, 2, 6, 8]
+        for index in indices {
+            let playerBox = player.collisionBoundingBox()
+            let playerCoord = layer.coordForPoint(player.position)
+            
+            let column = index % 3
+            let row = index / 3
+            let tileCoord = CGPointMake(playerCoord.x + CGFloat(column - 1), playerCoord.y + CGFloat(row - 1))
+            let gid = self.tileGIDAtCoordinate(tileCoord, layer: layer)
+            if (gid > 0) {
+                println("GID \(gid), Coord \(tileCoord), Rect: \(playerBox)")
+            }
+        }
     }
     
     /*
+    - (void)checkForAndResolveCollisionsForPlayer:(Player *)player forLayer:(TMXLayer *)layer {
     //1
-    - (void)update:(NSTimeInterval)currentTime
-    {
+    NSInteger indices[8] = {7, 1, 3, 5, 0, 2, 6, 8};
+    for (NSUInteger i = 0; i < 8; i++) {
+    NSInteger tileIndex = indices[i];
+    
     //2
-    NSTimeInterval delta = currentTime - self.previousUpdateTime;
+    CGRect playerRect = [player collisionBoundingBox];
     //3
-    if (delta > 0.02) {
-    delta = 0.02;
-    }
+    CGPoint playerCoord = [layer coordForPoint:player.position];
     //4
-    self.previousUpdateTime = currentTime;
+    NSInteger tileColumn = tileIndex % 3;
+    NSInteger tileRow = tileIndex / 3;
+    CGPoint tileCoord = CGPointMake(playerCoord.x + (tileColumn - 1), playerCoord.y + (tileRow - 1));
     //5
-    [self.player update:delta];
+    NSInteger gid = [self tileGIDAtTileCoord:tileCoord forLayer:layer];
+    //6
+    if (gid) {
+    //7
+    CGRect tileRect = [self tileRectFromTileCoords:tileCoord];
+    //8
+    NSLog(@"GID %ld, Tile Coord %@, Tile Rect %@, player rect %@", (long)gid, NSStringFromCGPoint(tileCoord), NSStringFromCGRect(tileRect), NSStringFromCGRect(playerRect));
+    //collision resolution goes here
+    }
+    
+    }
     }
 */
 }

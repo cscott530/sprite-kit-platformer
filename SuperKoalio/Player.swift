@@ -18,9 +18,9 @@ class Player : SKSpriteNode {
     @param name the name or path of the image to load.
     */
     init(imageNamed: String) {
-        var texture = SKTexture(imageNamed: imageNamed)!
-        var color = UIColor.clearColor()
-        var size = texture.size()
+        let texture = SKTexture(imageNamed: imageNamed)!
+        let color = UIColor.clearColor()
+        let size = texture.size()
         velocity = CGPointMake(0, 0)
         super.init(texture: texture, color: color, size: size)
     }
@@ -30,12 +30,16 @@ class Player : SKSpriteNode {
     }
     
     func update(timeDelta: NSTimeInterval) {
-        var delta = CGFloat(timeDelta)
-        var gravity = CGPointMake(0, -450)
-        var gStep = CGPointMultiplyScalar(gravity, delta)
+        let delta = CGFloat(timeDelta)
+        let gravity = CGPointMake(0, -450)
+        let gStep = CGPointMultiplyScalar(gravity, delta)
         self.velocity = CGPointAdd(velocity, gStep)
         
-        var vStep = CGPointMultiplyScalar(velocity, delta)
+        let vStep = CGPointMultiplyScalar(velocity, delta)
         self.position = CGPointAdd(self.position, vStep)
+    }
+    
+    func collisionBoundingBox() -> CGRect {
+        return CGRectInset(self.frame, 2, 0)
     }
 }
