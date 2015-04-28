@@ -45,7 +45,7 @@ class GameLevelScene: SKScene {
     }
 
     func tileRectFromTileCoords(coords: CGPoint) -> CGRect {
-        let levelHeight = self.map.frame.size.height * self.map.tileSize.height
+        let levelHeight = self.map.mapSize.height * self.map.tileSize.height
         let origin = CGPointMake(coords.x * self.map.tileSize.width, levelHeight - ((coords.y + 1) * (self.map.tileSize.height)))
         return CGRectMake(origin.x, origin.y, self.map.tileSize.width, self.map.tileSize.height)
     }
@@ -56,8 +56,8 @@ class GameLevelScene: SKScene {
     }
     
     func checkForAndResolveCollisionsForPlayer(player: Player, layer: TMXLayer) {
-        let indices = [7, 1, 3, 5, 0, 2, 6, 8]
-        for index in indices {
+        player.onGround = false
+        for index in [7, 1, 3, 5, 0, 2, 6, 8] {
             let playerBox = player.collisionBoundingBox()
             let playerCoord = layer.coordForPoint(player.desiredPosition)
             
@@ -66,9 +66,41 @@ class GameLevelScene: SKScene {
             let tileCoord = CGPointMake(playerCoord.x + CGFloat(column - 1), playerCoord.y + CGFloat(row - 1))
             let gid = self.tileGIDAtCoordinate(tileCoord, layer: layer)
             if (gid > 0) {
-                println("GID \(gid), Coord \(tileCoord), Rect: \(playerBox)")
+                let tileRect = self.tileRectFromTileCoords(tileCoord)                
+                
+                if (CGRectIntersectsRect(playerBox, tileRect)) {
+                    let intersection = CGRectIntersection(playerBox, tileRect).size
+                    switch(index) {
+                    case 7:
+                        player.desiredPosition = CGPointMake(player.desiredPosition.x, player.desiredPosition.y + intersection.height)
+                        player.velocity = CGPointMake(player.velocity.x, 0.0)
+                        player.onGround = true
+                    case 1:
+                        player.desiredPosition = CGPointMake(player.desiredPosition.x, player.desiredPosition.y - intersection.height)
+                    case 3:
+                        player.desiredPosition = CGPointMake(player.desiredPosition.x + intersection.width, player.desiredPosition.y)
+                    case 5:
+                        player.desiredPosition = CGPointMake(player.desiredPosition.x - intersection.width, player.desiredPosition.y)
+                    default:
+                        if (intersection.width > intersection.height) {
+                            player.velocity = CGPointMake(player.velocity.x, 0.0)
+                            var height = intersection.height
+                            if index > 4 {
+                                player.onGround = true
+                            } else {
+                                height *= -1
+                            }
+                            player.desiredPosition = CGPointMake(player.desiredPosition.x, player.desiredPosition.y + height)
+                        } else {
+                            let width = index == 6 || index == 0 ? intersection.width : -intersection.width
+                            player.desiredPosition = CGPointMake(player.desiredPosition.x  + width, player.desiredPosition.y)
+                        }
+                    }
+                    
+                }
             }
         }
+        player.position = player.desiredPosition
     }
     
     /*

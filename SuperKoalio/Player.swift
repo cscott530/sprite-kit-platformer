@@ -12,6 +12,7 @@ import SpriteKit
 class Player : SKSpriteNode {
     var velocity: CGPoint
     var desiredPosition: CGPoint
+    var onGround: Bool
     /**
     Initialize a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite. Its size is set to the SKTexture's pixel width/height)
     The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
@@ -24,6 +25,7 @@ class Player : SKSpriteNode {
         let size = texture.size()
         velocity = CGPointMake(0, 0)
         desiredPosition = CGPointMake(0, 0)
+        onGround = true
         super.init(texture: texture, color: color, size: size)
     }
 
