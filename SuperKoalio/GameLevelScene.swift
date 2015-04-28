@@ -12,6 +12,7 @@ import SpriteKit
 class GameLevelScene: SKScene {
     var map : JSTileMap?
     var player: Player?
+    var previousUpdateTime: NSTimeInterval = 0.0
     override init(size: CGSize) {
         super.init(size: size)
         
@@ -28,4 +29,31 @@ class GameLevelScene: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func update(currentTime: NSTimeInterval) {
+        var delta = currentTime - self.previousUpdateTime
+        if delta > 0.02 {
+            delta = 0.02
+        }
+        
+        self.previousUpdateTime = currentTime
+        self.player!.update(delta)
+    }
+    
+    /*
+    //1
+    - (void)update:(NSTimeInterval)currentTime
+    {
+    //2
+    NSTimeInterval delta = currentTime - self.previousUpdateTime;
+    //3
+    if (delta > 0.02) {
+    delta = 0.02;
+    }
+    //4
+    self.previousUpdateTime = currentTime;
+    //5
+    [self.player update:delta];
+    }
+*/
 }
