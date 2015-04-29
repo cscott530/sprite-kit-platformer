@@ -44,6 +44,7 @@ class GameLevelScene: SKScene {
         self.player.update(delta)
         
         self.checkForAndResolveCollisionsForPlayer(player, layer: walls)
+        self.setViewpointCenter(self.player.position)
     }
 
     func tileRectFromTileCoords(coords: CGPoint) -> CGRect {
@@ -103,6 +104,19 @@ class GameLevelScene: SKScene {
             }
         }
         player.position = player.desiredPosition
+    }
+    
+    func setViewpointCenter(center: CGPoint) {
+        var x = max(center.x, self.size.width / 2)
+        var y = max(center.y, self.size.height / 2)
+        
+        x = min(x, (self.map.mapSize.width * self.map.tileSize.width) - self.size.width / 2)
+        y = min(y, (self.map.mapSize.height * self.map.tileSize.height) - self.size.height / 2)
+        
+        let position = CGPointMake(x, y)
+        let center = CGPointMake(self.size.width / 2, self.size.height / 2)
+        let viewPoint = CGPointSubtract(center, position)
+        self.map.position = viewPoint
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
