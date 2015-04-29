@@ -47,8 +47,11 @@ class Player : SKSpriteNode {
         self.velocity = CGPointMake(self.velocity.x * 0.9, self.velocity.y)
         
         let jumpForce = CGPointMake(0, 310)
+        let jumpCutoff = CGFloat(150)
         if self.jumping && self.onGround {
             self.velocity = CGPointAdd(self.velocity, jumpForce)
+        } else if !self.jumping && self.velocity.y > jumpCutoff {
+            self.velocity = CGPointMake(self.velocity.x, jumpCutoff)
         }
         if self.moving {
             self.velocity = CGPointAdd(self.velocity, forwardStep)
