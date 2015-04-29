@@ -26,6 +26,8 @@ class GameLevelScene: SKScene {
         self.player.position = CGPointMake(100, 50)
         self.player.zPosition = 15
         self.map.addChild(self.player)
+        
+        self.userInteractionEnabled = true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -103,33 +105,44 @@ class GameLevelScene: SKScene {
         player.position = player.desiredPosition
     }
     
-    /*
-    - (void)checkForAndResolveCollisionsForPlayer:(Player *)player forLayer:(TMXLayer *)layer {
-    //1
-    NSInteger indices[8] = {7, 1, 3, 5, 0, 2, 6, 8};
-    for (NSUInteger i = 0; i < 8; i++) {
-    NSInteger tileIndex = indices[i];
-    
-    //2
-    CGRect playerRect = [player collisionBoundingBox];
-    //3
-    CGPoint playerCoord = [layer coordForPoint:player.position];
-    //4
-    NSInteger tileColumn = tileIndex % 3;
-    NSInteger tileRow = tileIndex / 3;
-    CGPoint tileCoord = CGPointMake(playerCoord.x + (tileColumn - 1), playerCoord.y + (tileRow - 1));
-    //5
-    NSInteger gid = [self tileGIDAtTileCoord:tileCoord forLayer:layer];
-    //6
-    if (gid) {
-    //7
-    CGRect tileRect = [self tileRectFromTileCoords:tileCoord];
-    //8
-    NSLog(@"GID %ld, Tile Coord %@, Tile Rect %@, player rect %@", (long)gid, NSStringFromCGPoint(tileCoord), NSStringFromCGRect(tileRect), NSStringFromCGRect(playerRect));
-    //collision resolution goes here
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for touchObject in touches {
+            let touch = touchObject as! UITouch
+            let location = touch.locationInNode(self)
+            if location.x < self.size.width / 2 {
+                self.player.jumping = true
+            } else {
+                self.player.moving = true
+            }
+        }
     }
     
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        var halfWidth = self.size.width / 2.0
+        for touchObject in touches {
+            let touch = touchObject as! UITouch
+            let location = touch.locationInNode(self)
+            
+            let previousLocation = touch.previousLocationInNode(self)
+            if location.x > halfWidth && previousLocation.x <= halfWidth {
+                self.player.moving = false
+                self.player.jumping = true
+            } else if previousLocation.x > halfWidth && location.x <= halfWidth {
+                self.player.moving = true
+                self.player.jumping = false
+            }
+        }
     }
+    
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for touchObject in touches {
+            let touch = touchObject as! UITouch
+            let location = touch.locationInNode(self)
+            if location.x < self.size.width / 2.0 {
+                self.player.moving = false
+            } else {
+                self.player.jumping = false
+            }
+        }
     }
-*/
 }

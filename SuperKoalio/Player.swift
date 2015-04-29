@@ -13,6 +13,8 @@ class Player : SKSpriteNode {
     var velocity: CGPoint
     var desiredPosition: CGPoint
     var onGround: Bool
+    var moving = false
+    var jumping = false
     /**
     Initialize a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite. Its size is set to the SKTexture's pixel width/height)
     The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
@@ -37,8 +39,20 @@ class Player : SKSpriteNode {
         let delta = CGFloat(timeDelta)
         let gravity = CGPointMake(0, -450)
         let gStep = CGPointMultiplyScalar(gravity, delta)
-        self.velocity = CGPointAdd(velocity, gStep)
         
+        let forwardMove = CGPointMake(800, 0)
+        let forwardStep = CGPointMultiplyScalar(forwardMove, delta)
+        
+        self.velocity = CGPointAdd(velocity, gStep)
+        self.velocity = CGPointMake(self.velocity.x * 0.9, self.velocity.y)
+        
+        if self.moving {
+            self.velocity = CGPointAdd(self.velocity, forwardStep)
+        }
+        
+        let minMove = CGPointMake(0, -450)
+        let maxMove = CGPointMake(120, 250)
+        self.velocity = CGPointMake(Clamp(self.velocity.x, minMove.x, maxMove.x), Clamp(self.velocity.y, minMove.y, maxMove.y))
         let vStep = CGPointMultiplyScalar(velocity, delta)
         self.desiredPosition = CGPointAdd(self.position, vStep)
     }
