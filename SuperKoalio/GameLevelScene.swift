@@ -110,9 +110,9 @@ class GameLevelScene: SKScene {
             let touch = touchObject as! UITouch
             let location = touch.locationInNode(self)
             if location.x < self.size.width / 2 {
-                self.player.jumping = true
-            } else {
                 self.player.moving = true
+            } else {
+                self.player.jumping = true
             }
         }
     }
